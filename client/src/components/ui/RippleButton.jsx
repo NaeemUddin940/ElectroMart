@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import React, { useRef, useCallback } from "react";
 
-const RippleButton = ({ children, className }) => {
+const RippleButton = ({ children, className, onClick }) => {
   const buttonRef = useRef(null);
 
   const rippleStyles = `
@@ -58,13 +58,16 @@ const RippleButton = ({ children, className }) => {
   }, []); // Empty dependency array means this function is created once
 
   return (
-    <div>
+    <div className="relative inline-block">
       {/* Inline style block to inject the necessary animation CSS */}
       <style dangerouslySetInnerHTML={{ __html: rippleStyles }} />
 
       <button
         ref={buttonRef}
-        onClick={createRipple}
+        onClick={(e) => {
+          createRipple(e);
+          if (onClick) onClick(e);
+        }}
         className={cn(
           "text-foreground font-semibold shadow-2xl tracking-wider transition duration-200 ease-in-out hover:bg-input/50 focus:outline-none focus:ring-input-90 focus:ring-opacity-70 relative overflow-hidden cursor-pointer transform hover:scale-[1.05] active:scale-[0.98]  select-none w-full max-w-sm",
           className
