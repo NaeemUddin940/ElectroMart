@@ -1,6 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import TopHeader from "@/components/Header/TopHeader";
+import MainHeader from "@/components/Header/MainHeader";
+import Navigation from "@/components/Header/Navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,17 +14,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
+
 export const metadata = {
-  title: "Axentra - Store",
+  title: "Electro - Mart",
   description: "This is a Electronic Store.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={` ${montserrat.variable} antialiased`}>
         <TopHeader />
+        <MainHeader />
+        <Navigation />
         {children}
       </body>
     </html>
