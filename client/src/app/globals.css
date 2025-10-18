@@ -75,8 +75,8 @@ body {
   --ring: #ffffff;
   --chart-1: #00bc7d;
   --chart-2: #009689;
-  --chart-3: #731ced;
-  --chart-4: #ffb900;
+  --chart-3: #4f4958;
+  --chart-4: #242424;
   --chart-5: #fe9a00;
   --sidebar: #f8fafc;
   --sidebar-foreground: #020618;
@@ -109,7 +109,7 @@ body {
   --ring: #f7f9fa;
   --chart-1: #009689;
   --chart-2: #00bc7d;
-  --chart-3: #7909db;
+  --chart-3: #717897;
   --chart-4: #8c00ff;
   --chart-5: #ff2056;
   --sidebar: #0f172b;

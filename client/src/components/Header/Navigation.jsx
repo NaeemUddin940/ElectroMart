@@ -37,9 +37,9 @@ export default function Navigation() {
   ];
 
   return (
-    <div className="bg-chart-1">
+    <div className="bg-chart-1 hidden md:block px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-1">
-        <div className="flex items-center bg-transparent shadow-lg border-1 w-[530px] rounded-full gap-4 pr-3">
+        <div className="flex items-center bg-transparent shadow-lg border-1 w-[500px] lg:w-[550px] rounded-full gap-4 pr-3">
           {/* Categories Collapse */}
           <div className="relative border-r border-gray-300">
             <button
@@ -58,14 +58,14 @@ export default function Navigation() {
             <div
               className={`absolute ${
                 categoryCollapse ? "opacity-100" : "opacity-0"
-              } left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-30 overflow-hidden transition-all duration-300 ease-in-out opacity-0`}
+              } left-0 mt-1 w-64 bg-background rounded-lg shadow-xl border border-gray-200 z-30 overflow-hidden transition-all duration-300 ease-in-out opacity-0`}
               style={{ height: `${contentHeight}px` }}>
               <div ref={collapseRef} className="p-1">
                 <ul className="flex flex-col">
                   {categories.map((category, index) => (
                     <li
                       key={index}
-                      className="text-gray-800 px-3 py-2 text-sm rounded-md hover:bg-indigo-50 hover:text-indigo-600 cursor-pointer transition duration-150">
+                      className="text-foreground px-3 py-2 text-sm rounded-md hover:bg-chart-1/20 hover:text-chart-2 cursor-pointer transition duration-150">
                       {category}
                     </li>
                   ))}
@@ -73,8 +73,6 @@ export default function Navigation() {
               </div>
             </div>
           </div>
-
-          {/* <div className="h-5 border-r-2 border-primary" />  */}
 
           {/* Search input */}
           <div className="flex items-center justify-between w-full relative">
@@ -103,9 +101,11 @@ export default function Navigation() {
         </div>
 
         {/* Info */}
-        <div>free shipping over $199</div>
-        <div>30 days money back</div>
-        <div>100% secure payment</div>
+        <div className="hidden  text-[15px] lg:flex items-center gap-6 px-3">
+          <div>free shipping over $199</div>
+          <div>30 days money back</div>
+          <div>100% secure payment</div>
+        </div>
       </div>
     </div>
   );
